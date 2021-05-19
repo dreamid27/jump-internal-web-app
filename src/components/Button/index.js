@@ -1,18 +1,19 @@
 import React from "react";
+import styles from './Button.module.css';
 import { Link } from "react-router-dom";
 
 const Button = () => {
     return (
-        <div>
+        <div className={styles.container}>
             <a>
-                <Link to="/">Home</Link>
+                <Link className={styles.textLink} to="/">Home</Link>
             </a>
             <a>
-                <Link to="/mentee">Mentee</Link>
+                <Link className={styles.textLink} to="/mentee">Mentee</Link>
             </a>
             <a>
-                <Link to="/mentors">Mentors</Link
-                ></a>
+                <Link className={styles.textLink} to="/mentors">Mentors</Link>
+            </a>
         </div>
     )
 }
