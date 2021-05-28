@@ -4,7 +4,6 @@ import Home from '../pages/Home';
 import Mentee from '../pages/Mentee';
 import Mentors from '../pages/Mentors';
 import {
-    BrowserRouter as Router,
     Switch,
     Route,
 } from "react-router-dom";
