@@ -1,7 +1,7 @@
 import React from "react";
-import Container from './Home.module';
+import styles from './Home.module.css';
 
 //TODO: add navigasi ke halaman mentee and mentors
-const Home = () => <Container>Ini Halaman Home</Container>;
+const Home = () => <div className={styles.container}>Ini Halaman Home</div>;
 
 export default Home;

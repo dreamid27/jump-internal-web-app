@@ -1,0 +1,19 @@
+.container {
+    background-color:#9b9797;
+    padding: 10px;
+    text-align: center;
+}
+
+.container a {
+    padding-right: 20px;
+}
+
+.container a:last-child {
+    padding-right: 0;
+}
+
+.textLink {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
