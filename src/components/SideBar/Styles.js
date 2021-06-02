@@ -8,14 +8,15 @@ export const HeadNav = styled.div`
     display: flex;
     align-items: center;
     padding: 2.32rem 0rem 3.69rem 2rem;
-    & > h1 {
+    & > div {
         font-size: 1.19rem;
         color: #A4A6B3;
-        padding-left: 0.75rem;
+        font-weight: bold;
     }
 `
 
 export const Logo = styled.div`
+    margin-right: 0.75rem;
     background-color: #3751FF;
     width: 2rem;
     height: 2rem;

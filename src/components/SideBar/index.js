@@ -11,9 +11,12 @@ const NavBar = () => {
                 <Logo>
                     <img src={logo} alt='Logo'></img>
                 </Logo>
-                <h1>
+                <div>
                     Dashboard Kit
-                </h1>
+                </div>
+                {/* <h1>
+                    Dashboard Kit
+                </h1> */}
             </HeadNav>
             <ListNav>
                 <Link to="/">
