@@ -66,17 +66,17 @@ const columns = [
         render: (text, record) => {
             if (record.priority === 1) {
                 return <HighLevel>
-                            <div>Hight</div> 
+                            <div>HIGH</div> 
                             <DotsThreeVertical />
                         </HighLevel> 
             }else if (record.priority === 2) {
                 return <NormalLevel>
-                            <div>Normal</div>
+                            <div>NORMAL</div>
                             <DotsThreeVertical />
                         </NormalLevel> 
             }else if (record.priority === 3) {
                 return <LowLevel>
-                            <div>Low</div>
+                            <div>LOW</div>
                             <DotsThreeVertical />
                         </LowLevel> 
             }

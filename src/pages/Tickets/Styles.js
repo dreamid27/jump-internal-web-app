@@ -99,6 +99,7 @@ export const HighLevel = styled.div`
         width: 3.25rem;
         height: 1.5rem;
         border-radius: 6.25rem;
+        color: #FFFFFF;
     }
     & > svg {
         position: absolute;
@@ -122,6 +123,7 @@ export const NormalLevel = styled.div`
         width: 4.75rem;
         height: 1.5rem;
         border-radius: 6.25rem;
+        color: #FFFFFF;
     }
     & > svg {
         position: absolute;
@@ -145,6 +147,7 @@ export const LowLevel = styled.div`
         width: 3.25rem;
         height: 1.5rem;
         border-radius: 6.25rem;
+        color: #FFFFFF;
     }
     & > svg {
         position: absolute;
