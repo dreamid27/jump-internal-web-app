@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 
 const Container = styled.div`
-    font-size: 50px;
-    padding-top: 50px;
+    font-size: 3.13rem;
+    padding-top: 3.13rem;
     text-align: center;
     width: 100vh;
 `

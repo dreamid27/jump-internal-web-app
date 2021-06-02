@@ -3,6 +3,7 @@ import React from "react";
 import Home from '../pages/Home';
 import Mentee from '../pages/Mentee';
 import Mentors from '../pages/Mentors';
+import Tickets from '../pages/Tickets';
 import {
     Switch,
     Route,
@@ -20,6 +21,9 @@ const Routes = () => {
                 </Route>
                 <Route path="/mentors">
                     <Mentors />
+                </Route>
+                <Route path="/tickets">
+                    <Tickets />
                 </Route>
             </Switch>
         </div>

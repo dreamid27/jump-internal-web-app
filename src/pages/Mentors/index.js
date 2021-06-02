@@ -1,5 +1,5 @@
 import React from "react";
-import Container from "./Mentors.module";
+import Container from "./Styles";
 
 
 //TODO: add navigasi ke halaman home and mentee

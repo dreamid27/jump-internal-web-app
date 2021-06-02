@@ -1,16 +1,14 @@
 import Routes from './routes';
-import Navbar from './components/Button';
-import Container from './App.module';
-import Sidebar from './App.module';
-import Content from './App.module';
+import Sidebar from './components/SideBar'
+import Container, { Content, SideBar } from './Styles';
 
 function App() {
 
   return (
     <Container>
-      <Sidebar>
-        <Navbar />
-      </Sidebar>
+      <SideBar>
+        <Sidebar />
+      </SideBar>
       <Content>
         <Routes />
       </Content>
