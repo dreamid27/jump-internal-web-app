@@ -12,7 +12,7 @@ const Routes = () => {
     return (
         <div>
             <Switch>
-                <Route exact path="/">
+                <Route exact path="/dd">
                     <Home />
                 </Route>
                 <Route path="/mentee">
