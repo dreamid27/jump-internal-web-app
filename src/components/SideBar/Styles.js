@@ -36,7 +36,7 @@ export const ListNav = styled.div`
             display: flex;
             align-items: center;
             & > svg {
-                padding-right: 1.5rem;
+                margin-right: 1.5rem;
                 width: 1rem;
                 height: 1rem;
             }

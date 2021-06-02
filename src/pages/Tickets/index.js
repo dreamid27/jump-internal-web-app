@@ -1,5 +1,5 @@
 import React from "react";
-import Container, { Content, CustomerNameView, DateView, HeadContent, HighLevel, NormalLevel, LowLevel, TiketDetailsView, ContainerHighLevel } from "./Styles";
+import Container, { Content, CustomerNameView, DateView, HeadContent, HighLevel, NormalLevel, LowLevel, TiketDetailsView } from "./Styles";
 import Avatar from '../../images/photo.png';
 import { Bell, DotsThreeVertical, MagnifyingGlass } from 'phosphor-react';
 import { Table } from 'antd';
@@ -16,7 +16,7 @@ const columns = [
         render: (text, record) => {
             return (
                 <TiketDetailsView>
-                    <img src={record.tiketDetailsImages} />
+                    <img src={record.tiketDetailsImages}/>
                     <div>
                         <h1> {record.tiketDetailsStatus} </h1>
                         <h2> {record.tiketDetailsUpdate} </h2>
