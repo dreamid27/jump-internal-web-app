@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Container, { HeadNav, ListNav, Logo } from './Styles';
-import logo from '../../images/d.png';
+import Container, { HeadNav, ListNav, Logo } from './styles';
+import logo from './images/d.png';
 import { Users, User, House, Ticket } from 'phosphor-react';
 
 const NavBar = () => {
@@ -14,9 +14,6 @@ const NavBar = () => {
                 <div>
                     Dashboard Kit
                 </div>
-                {/* <h1>
-                    Dashboard Kit
-                </h1> */}
             </HeadNav>
             <ListNav>
                 <Link to="/">

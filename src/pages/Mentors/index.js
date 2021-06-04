@@ -1,8 +1,14 @@
 import React from "react";
-import Container from "./Styles";
+import Container from "./styles";
 
 
 //TODO: add navigasi ke halaman home and mentee
-const Mentors = () => <Container>Ini Halaman Mentors</Container>;
+const Mentors = () => {
+    return(
+        <Container>
+            Ini Halaman Mentors
+        </Container>
+    );
+};
 
 export default Mentors;
