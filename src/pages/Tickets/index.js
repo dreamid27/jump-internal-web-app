@@ -1,20 +1,23 @@
 import React from "react";
 import Container, { Content } from './styles';
 import { Table } from 'antd';
-import {columns, dataSource} from './constants';
 import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 import HeadContents from '../../components/HeadContent';
+import useTickets from '../../hooks/getTickets';
+import columns from "./constants";
 
 //TODO: add navigasi ke halaman home and mentee
 
-const Mentors = () => {
+const Tickets = () => {
+    
+    useTickets();
     return (
         <Container>
             <HeadContents />
             <Content>
                 <Table 
-                    dataSource={dataSource} 
                     columns={columns}
+                    // dataSource={dataSource} 
                     title={() => 'All Tickets'}
                 />
             </Content>
@@ -22,4 +25,4 @@ const Mentors = () => {
     );
 };
 
-export default Mentors;
+export default Tickets;

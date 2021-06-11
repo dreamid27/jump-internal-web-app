@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import pixelToRem from '../helpers/pixelToRem';
+import { DARK_BLUE } from './color';
 
 export const Container = styled.div`
     display: flex;
@@ -8,7 +9,8 @@ export const Container = styled.div`
 export const SideBar = styled.div`
     position: fixed;
     overflow: auto;
-    background-color: #363740;
+    z-index: 999;
+    background-color: ${DARK_BLUE};
     width: ${pixelToRem(255)};
 `
 

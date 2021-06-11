@@ -1,6 +1,37 @@
 import { CustomerNameView, DateView, HighLevel, NormalLevel, LowLevel, TiketDetailsView } from "./styles";
 import { DotsThreeVertical } from 'phosphor-react';
-import Avatar from './images/photo.png';
+// import Avatar from './images/photo.png';
+import getTickets from '../../hooks/getTickets';
+
+export const dataSource = []
+// getTickets.map(row => 
+        // {
+        //     key: row.id,
+        //     tiketDetailsImages: row.avatar,
+        //     tiketDetailsStatus: row.notes,
+        //     tiketDetailsUpdate: row.createdAt,
+        //     customerName: row.name,
+        //     customerNameOn: row.createdAt,
+        //     date: row.date,
+        //     dateTime: row.date,
+        //     priority: row.priority,
+        // }
+//     );
+
+// pushData();
+// getTickets.map(row => (
+//     {
+//         key: row.id,
+//         tiketDetailsImages: row.avatar,
+//         tiketDetailsStatus: row.notes,
+//         tiketDetailsUpdate: row.createdAt,
+//         customerName: row.name,
+//         customerNameOn: row.createdAt,
+//         date: row.date,
+//         dateTime: row.date,
+//         priority: row.priority,
+//     }
+// ));
 
 export const columns = [
     {
@@ -10,7 +41,7 @@ export const columns = [
         render: (text, record) => {
             return (
                 <TiketDetailsView>
-                    <img src={record.tiketDetailsImages}/>
+                    <img src={record.tiketDetailsImages} alt='AvatarUser'/>
                     <div>
                         <h1> {record.tiketDetailsStatus} </h1>
                         <h2> {record.tiketDetailsUpdate} </h2>
@@ -80,62 +111,62 @@ export const columns = [
     },
 ];
 
-export const dataSource = [];
+export default columns;
 
-const isPrime = (num) => {
-    if(num < 2) return false;
-    for (var i = 2; i < num; i++) {
-        if(num%i === 0)
-            return false;
-    }
-    return true;
-}
+// const isPrime = (num) => {
+//     if(num < 2) return false;
+//     for (var i = 2; i < num; i++) {
+//         if(num%i === 0)
+//             return false;
+//     }
+//     return true;
+// }
 
-for (let i = 0; i < 100; i++) {
-    if (i % 2 === 1) {
-        if (isPrime(i)) {
-            dataSource.push(
-                {
-                    key: i,
-                    tiketDetailsImages: Avatar,
-                    tiketDetailsStatus: 'Contact Email not Linked',
-                    tiketDetailsUpdate: 'Update 1 day ago',
-                    customerName: 'Tom Cruise ',
-                    customerNameOn: 'on 24.05.2019',
-                    date: 'May 16, 2019',
-                    dateTime: '6.30 PM',
-                    priority: 1,
-                }
-              );
-        }
-        else {
-            dataSource.push(
-                {
-                    key: i,
-                    tiketDetailsImages: Avatar,
-                    tiketDetailsStatus: 'Contact Email not Linked',
-                    tiketDetailsUpdate: 'Update 1 day ago',
-                    customerName: 'Tom Cruise ',
-                    customerNameOn: 'on 24.05.2019',
-                    date: 'May 16, 2019',
-                    dateTime: '6.30 PM',
-                    priority: 3,
-                }
-              );
-        }
-    } else {
-        dataSource.push(
-            {
-                key: i,
-                tiketDetailsImages: Avatar,
-                tiketDetailsStatus: 'Contact Email not Linked',
-                tiketDetailsUpdate: 'Update 1 day ago',
-                customerName: 'Tom Cruise ',
-                customerNameOn: 'on 24.05.2019',
-                date: 'May 16, 2019',
-                dateTime: '6.30 PM',
-                priority: 2,
-            }
-          );
-    }
-}
+// for (let i = 0; i < 100; i++) {
+//     if (i % 2 === 1) {
+//         if (isPrime(i)) {
+//             dataSource.push(
+//                 {
+//                     key: i,
+//                     tiketDetailsImages: Avatar,
+//                     tiketDetailsStatus: 'Contact Email not Linked',
+//                     tiketDetailsUpdate: 'Update 1 day ago',
+//                     customerName: 'Tom Cruise ',
+//                     customerNameOn: 'on 24.05.2019',
+//                     date: 'May 16, 2019',
+//                     dateTime: '6.30 PM',
+//                     priority: 1,
+//                 }
+//               );
+//         }
+//         else {
+//             dataSource.push(
+//                 {
+//                     key: i,
+//                     tiketDetailsImages: Avatar,
+//                     tiketDetailsStatus: 'Contact Email not Linked',
+//                     tiketDetailsUpdate: 'Update 1 day ago',
+//                     customerName: 'Tom Cruise ',
+//                     customerNameOn: 'on 24.05.2019',
+//                     date: 'May 16, 2019',
+//                     dateTime: '6.30 PM',
+//                     priority: 3,
+//                 }
+//               );
+//         }
+//     } else {
+//         dataSource.push(
+//             {
+//                 key: i,
+//                 tiketDetailsImages: Avatar,
+//                 tiketDetailsStatus: 'Contact Email not Linked',
+//                 tiketDetailsUpdate: 'Update 1 day ago',
+//                 customerName: 'Tom Cruise ',
+//                 customerNameOn: 'on 24.05.2019',
+//                 date: 'May 16, 2019',
+//                 dateTime: '6.30 PM',
+//                 priority: 2,
+//             }
+//           );
+//     }
+// }

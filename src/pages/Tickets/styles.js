@@ -1,14 +1,12 @@
 import styled from '@emotion/styled';
 import pixelToRem from '../../utils/helpers/pixelToRem';
+import { DARK_BLUE, GREEN, LIGHT_BLUE, LIGHT_GREY, RED, WHITE, YELLOW } from '../../utils/styles/color';
 
 export const Container = styled.div`
 `
 
 export const Content = styled.div`
-    padding: ${pixelToRem(0)} ${pixelToRem(30)};
-    & > ant-table-wrapper {
-        background-color: red;
-    }
+    padding: 0 ${pixelToRem(30)};
 `
 
 export const TiketDetailsView = styled.div`
@@ -21,13 +19,13 @@ export const TiketDetailsView = styled.div`
     & > div {
         margin-left: ${pixelToRem(24)};
         & > h1 {
-            margin: ${pixelToRem(0)};
-            color: #252733;
+            margin: 0;
+            color: ${DARK_BLUE};
             font-size: ${pixelToRem(14)};
         }
         & > h2 {
-            margin: ${pixelToRem(0)};
-            color: #C5C7CD;
+            margin: 0;
+            color: ${LIGHT_GREY};
             font-size: ${pixelToRem(14)};
         }
     }
@@ -35,26 +33,26 @@ export const TiketDetailsView = styled.div`
 
 export const CustomerNameView = styled.div`
     & > h1 {
-        margin: ${pixelToRem(0)};
-        color: #252733;
+        margin: 0;
+        color: ${DARK_BLUE};
         font-size: ${pixelToRem(14)};
     }
     & > h2 {
-        margin: ${pixelToRem(0)};
-        color: #C5C7CD;
+        margin: 0;
+        color: ${LIGHT_GREY};
         font-size: ${pixelToRem(14)};
     }
 `
 
 export const DateView = styled.div`
     & > h1 {
-        margin: ${pixelToRem(0)};
-        color: #252733;
+        margin: 0;
+        color: ${DARK_BLUE};
         font-size: ${pixelToRem(14)};
     }
     & > h2 {
-        margin: ${pixelToRem(0)};
-        color: #C5C7CD;
+        margin: 0;
+        color: ${LIGHT_BLUE};
         font-size: ${pixelToRem(12)};
     }
 `
@@ -68,18 +66,18 @@ export const HighLevel = styled.div`
         align-items: center;
         justify-content: center;
         font-size: ${pixelToRem(11)};
-        background-color: #F12B2C;
+        background-color: ${RED};
         width: ${pixelToRem(52)};
         height: ${pixelToRem(24)};
         border-radius: ${pixelToRem(100)};
-        color: #FFFFFF;
+        color: ${WHITE};
     }
     & > svg {
         position: absolute;
-        right: ${pixelToRem(0)};
+        right: 0;
         height: ${pixelToRem(24)};
         width: ${pixelToRem(24)};
-        color: #C5C7CD;
+        color: ${LIGHT_GREY};
     }
 `
 
@@ -92,18 +90,18 @@ export const NormalLevel = styled.div`
         align-items: center;
         justify-content: center;
         font-size: ${pixelToRem(11)};
-        background-color: #29CC97;
+        background-color: ${GREEN};
         width: ${pixelToRem(76)};
         height: ${pixelToRem(24)};
         border-radius: ${pixelToRem(100)};
-        color: #FFFFFF;
+        color: ${WHITE};
     }
     & > svg {
         position: absolute;
-        right: ${pixelToRem(0)};
+        right: 0;
         height: ${pixelToRem(24)};
         width: ${pixelToRem(24)};
-        color: #C5C7CD;
+        color: ${LIGHT_GREY};
     }
     
 `
@@ -116,18 +114,18 @@ export const LowLevel = styled.div`
         align-items: center;
         justify-content: center;
         font-size: ${pixelToRem(11)};
-        background-color: #FEC400;
+        background-color: ${YELLOW};
         width: ${pixelToRem(52)};
         height: ${pixelToRem(24)};
         border-radius: ${pixelToRem(100)};
-        color: #FFFFFF;
+        color: ${WHITE};
     }
     & > svg {
         position: absolute;
-        right: ${pixelToRem(0)};
+        right: 0;
         height: ${pixelToRem(20)};
         width: ${pixelToRem(20)};
-        color: #C5C7CD;
+        color: ${LIGHT_GREY};
     }
 `
 

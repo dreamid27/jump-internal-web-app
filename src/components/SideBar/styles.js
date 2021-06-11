@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import pixelToRem from '../../utils/helpers/pixelToRem';
+import { BLUE, LIGHT_BLUE } from '../../utils/styles/color';
 
 const Container = styled.div`
     height: 100vh;
@@ -8,18 +9,17 @@ const Container = styled.div`
 export const HeadNav = styled.div`
     display: flex;
     align-items: center;
-    padding: ${pixelToRem(37)} ${pixelToRem(0)} ${pixelToRem(59)} ${pixelToRem(32)};
-    /* padding: ${pixelToRem(37)} ${pixelToRem(0)} ${pixelToRem(59)} ${pixelToRem(22)}; */
+    padding: ${pixelToRem(37)} 0 ${pixelToRem(59)} ${pixelToRem(32)};
     & > div {
         font-size: ${pixelToRem(19)};
-        color: #A4A6B3;
+        color: ${LIGHT_BLUE};
         font-weight: bold;
     }
 `
 
 export const Logo = styled.div`
     margin-right: ${pixelToRem(12)};
-    background-color: #3751FF;
+    background-color: ${BLUE};
     width: ${pixelToRem(32)};
     height: ${pixelToRem(32)};
     border-radius: 50%;
@@ -33,9 +33,9 @@ export const Logo = styled.div`
 export const ListNav = styled.div`
     & > a {
             text-decoration: none;
-            padding: ${pixelToRem(20)} ${pixelToRem(0)} ${pixelToRem(20)} ${pixelToRem(32)};
+            padding: ${pixelToRem(20)} 0 ${pixelToRem(20)} ${pixelToRem(32)};
             font-size: ${pixelToRem(16)};
-            color: #A4A6B3;
+            color: ${LIGHT_BLUE};
             display: flex;
             align-items: center;
             & > svg {

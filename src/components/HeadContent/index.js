@@ -1,17 +1,21 @@
 import React from 'react';
 import { Bell, MagnifyingGlass } from 'phosphor-react';
 import Avatar from './images/photo.png';
-import HeadContents from './styles';
+import HeadContents, { Left, Right } from './styles';
 
 const HeadContent = () => {
     return (
         <HeadContents>
-                <h1>Tickets</h1>
+            <Left>
+                Tickets
+            </Left>
+            <Right>
                 <MagnifyingGlass />
                 <Bell />
                 <h2>Jones Ferdinand</h2>
                 <img src={Avatar} alt='Avatar'></img>
-            </HeadContents>
+            </Right>
+        </HeadContents>
     );
 };
 
