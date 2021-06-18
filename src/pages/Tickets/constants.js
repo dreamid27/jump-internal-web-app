@@ -1,37 +1,24 @@
 import { CustomerNameView, DateView, HighLevel, NormalLevel, LowLevel, TiketDetailsView } from "./styles";
 import { DotsThreeVertical } from 'phosphor-react';
-// import Avatar from './images/photo.png';
-import getTickets from '../../hooks/getTickets';
+// import { format, formatDistanceToNow, parseISO } from 'date-fns';
 
-export const dataSource = []
-// getTickets.map(row => 
-        // {
-        //     key: row.id,
-        //     tiketDetailsImages: row.avatar,
-        //     tiketDetailsStatus: row.notes,
-        //     tiketDetailsUpdate: row.createdAt,
-        //     customerName: row.name,
-        //     customerNameOn: row.createdAt,
-        //     date: row.date,
-        //     dateTime: row.date,
-        //     priority: row.priority,
-        // }
-//     );
+// export const normalizerDataSource = (dataSource) => {
+//     return dataSource.map(row => (
+//         {
+//             key: row.id,
+//             tiketDetailsImages: row.avatar,
+//             tiketDetailsStatus: row.notes,
+//             tiketDetailsUpdate: formatDistanceToNow(parseISO(row.createdAt)),
+//             customerName: row.name,
+//             customerNameOn: format(parseISO(row.createdAt), 'dd.mm.yyyy'),
+//             date: format(parseISO(row.date), 'MMM dd, yyyy'),
+//             dateTime: format(parseISO(row.date), 'h.mm a'),
+//             priority: row.priority,
+//         }
+//     ));
+// };
 
-// pushData();
-// getTickets.map(row => (
-//     {
-//         key: row.id,
-//         tiketDetailsImages: row.avatar,
-//         tiketDetailsStatus: row.notes,
-//         tiketDetailsUpdate: row.createdAt,
-//         customerName: row.name,
-//         customerNameOn: row.createdAt,
-//         date: row.date,
-//         dateTime: row.date,
-//         priority: row.priority,
-//     }
-// ));
+
 
 export const columns = [
     {
@@ -44,7 +31,7 @@ export const columns = [
                     <img src={record.tiketDetailsImages} alt='AvatarUser'/>
                     <div>
                         <h1> {record.tiketDetailsStatus} </h1>
-                        <h2> {record.tiketDetailsUpdate} </h2>
+                        <h2> Upadate {record.tiketDetailsUpdate} ago </h2>
                     </div>
                 </TiketDetailsView>
             );
@@ -61,7 +48,7 @@ export const columns = [
                         {record.customerName}
                     </h1>
                     <h2>
-                        {record.customerNameOn}
+                        on {record.customerNameOn}
                     </h2>
                 </CustomerNameView>
             );
@@ -112,61 +99,3 @@ export const columns = [
 ];
 
 export default columns;
-
-// const isPrime = (num) => {
-//     if(num < 2) return false;
-//     for (var i = 2; i < num; i++) {
-//         if(num%i === 0)
-//             return false;
-//     }
-//     return true;
-// }
-
-// for (let i = 0; i < 100; i++) {
-//     if (i % 2 === 1) {
-//         if (isPrime(i)) {
-//             dataSource.push(
-//                 {
-//                     key: i,
-//                     tiketDetailsImages: Avatar,
-//                     tiketDetailsStatus: 'Contact Email not Linked',
-//                     tiketDetailsUpdate: 'Update 1 day ago',
-//                     customerName: 'Tom Cruise ',
-//                     customerNameOn: 'on 24.05.2019',
-//                     date: 'May 16, 2019',
-//                     dateTime: '6.30 PM',
-//                     priority: 1,
-//                 }
-//               );
-//         }
-//         else {
-//             dataSource.push(
-//                 {
-//                     key: i,
-//                     tiketDetailsImages: Avatar,
-//                     tiketDetailsStatus: 'Contact Email not Linked',
-//                     tiketDetailsUpdate: 'Update 1 day ago',
-//                     customerName: 'Tom Cruise ',
-//                     customerNameOn: 'on 24.05.2019',
-//                     date: 'May 16, 2019',
-//                     dateTime: '6.30 PM',
-//                     priority: 3,
-//                 }
-//               );
-//         }
-//     } else {
-//         dataSource.push(
-//             {
-//                 key: i,
-//                 tiketDetailsImages: Avatar,
-//                 tiketDetailsStatus: 'Contact Email not Linked',
-//                 tiketDetailsUpdate: 'Update 1 day ago',
-//                 customerName: 'Tom Cruise ',
-//                 customerNameOn: 'on 24.05.2019',
-//                 date: 'May 16, 2019',
-//                 dateTime: '6.30 PM',
-//                 priority: 2,
-//             }
-//           );
-//     }
-// }

@@ -3,22 +3,25 @@ import Container, { Content } from './styles';
 import { Table } from 'antd';
 import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 import HeadContents from '../../components/HeadContent';
-import useTickets from '../../hooks/getTickets';
 import columns from "./constants";
+import useTickets from "../../hooks/useTickets";
+
 
 //TODO: add navigasi ke halaman home and mentee
 
 const Tickets = () => {
-    
-    useTickets();
+    const { tickets, isLoading } = useTickets();
+    // const dataSourceFinal = normalizerDataSource(tickets);
+
     return (
         <Container>
             <HeadContents />
             <Content>
                 <Table 
                     columns={columns}
-                    // dataSource={dataSource} 
+                    dataSource={tickets}
                     title={() => 'All Tickets'}
+                    loading={isLoading}
                 />
             </Content>
         </Container>
