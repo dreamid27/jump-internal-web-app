@@ -1,16 +1,17 @@
 import Routes from './routes';
-import Navbar from './components/Button';
-import Container from './App.module';
-import Sidebar from './App.module';
-import Content from './App.module';
+import Sidebar from './components/SideBar'
+import Container, { Content, SideBar } from './utils/styles/app';
+import { Global } from '@emotion/react';
+import { classGlobal } from './GlobalStyles';
 
 function App() {
 
   return (
     <Container>
-      <Sidebar>
-        <Navbar />
-      </Sidebar>
+      <Global styles={classGlobal} />
+      <SideBar>
+        <Sidebar />
+      </SideBar>
       <Content>
         <Routes />
       </Content>

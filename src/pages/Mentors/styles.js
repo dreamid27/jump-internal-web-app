@@ -1,10 +1,9 @@
 import styled from '@emotion/styled';
+import pixelToRem from '../../utils/helpers/pixelToRem'
 
 const Container = styled.div`
-    font-size: 50px;
-    padding-top: 50px;
+    font-size: ${pixelToRem(50)};
     text-align: center;
-    width: 100vh;
 `
 
 export default Container;
