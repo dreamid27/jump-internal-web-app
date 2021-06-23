@@ -1,26 +1,7 @@
 import { CustomerNameView, DateView, HighLevel, NormalLevel, LowLevel, TiketDetailsView } from "./styles";
 import { DotsThreeVertical } from 'phosphor-react';
-// import { format, formatDistanceToNow, parseISO } from 'date-fns';
 
-// export const normalizerDataSource = (dataSource) => {
-//     return dataSource.map(row => (
-//         {
-//             key: row.id,
-//             tiketDetailsImages: row.avatar,
-//             tiketDetailsStatus: row.notes,
-//             tiketDetailsUpdate: formatDistanceToNow(parseISO(row.createdAt)),
-//             customerName: row.name,
-//             customerNameOn: format(parseISO(row.createdAt), 'dd.mm.yyyy'),
-//             date: format(parseISO(row.date), 'MMM dd, yyyy'),
-//             dateTime: format(parseISO(row.date), 'h.mm a'),
-//             priority: row.priority,
-//         }
-//     ));
-// };
-
-
-
-export const columns = [
+const columns = [
     {
         title: 'Tiket Details',
         dataIndex: 'tiketDetails',

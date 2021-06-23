@@ -6,13 +6,11 @@ import HeadContents from '../../components/HeadContent';
 import columns from "./constants";
 import useTickets from "../../hooks/useTickets";
 
-
 //TODO: add navigasi ke halaman home and mentee
 
 const Tickets = () => {
     const { tickets, isLoading } = useTickets();
-    // const dataSourceFinal = normalizerDataSource(tickets);
-
+    
     return (
         <Container>
             <HeadContents />
