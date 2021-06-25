@@ -1,5 +1,6 @@
+/* eslint-disable eqeqeq */
 import { CustomerNameView, DateView, HighLevel, NormalLevel, LowLevel, TiketDetailsView } from "./styles";
-import { DotsThreeVertical } from 'phosphor-react';
+import ModalDelete from "./modalDelete";
 
 const columns = [
     {
@@ -57,25 +58,29 @@ const columns = [
         dataIndex: 'priority',
         key: 'priority',
         render: (text, record) => {
-            if (record.priority === 1) {
+            if (record.priority == 1) {
                 return <HighLevel>
                             <div>HIGH</div> 
-                            <DotsThreeVertical />
                         </HighLevel> 
-            }else if (record.priority === 2) {
+            }else if (record.priority == 2) {
                 return <NormalLevel>
                             <div>NORMAL</div>
-                            <DotsThreeVertical />
                         </NormalLevel> 
-            }else if (record.priority === 3) {
+            }else if (record.priority == 3) {
                 return <LowLevel>
                             <div>LOW</div>
-                            <DotsThreeVertical />
                         </LowLevel> 
             }
         },
         sorter: (a, b) => a.priority - b.priority,
         sorOrder: 1,
+    },
+    {
+        title: 'Action',
+        key: 'action',
+        render: (text, record) => (
+            ModalDelete(record.key)
+        ),
     },
 ];
 

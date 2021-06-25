@@ -59,8 +59,7 @@ export const DateView = styled.div`
 
 export const HighLevel = styled.div`
     display: flex;
-    align-items: center;
-    position: relative;
+    justify-content: center;
     & > div {
         display: flex;
         align-items: center;
@@ -72,19 +71,11 @@ export const HighLevel = styled.div`
         border-radius: ${pixelToRem(100)};
         color: ${WHITE};
     }
-    & > svg {
-        position: absolute;
-        right: 0;
-        height: ${pixelToRem(24)};
-        width: ${pixelToRem(24)};
-        color: ${LIGHT_GREY};
-    }
 `
 
 export const NormalLevel = styled.div`
-    position: relative;
     display: flex;
-    align-items: center;
+    justify-content: center;
     & > div {
         display: flex;
         align-items: center;
@@ -96,19 +87,10 @@ export const NormalLevel = styled.div`
         border-radius: ${pixelToRem(100)};
         color: ${WHITE};
     }
-    & > svg {
-        position: absolute;
-        right: 0;
-        height: ${pixelToRem(24)};
-        width: ${pixelToRem(24)};
-        color: ${LIGHT_GREY};
-    }
-    
 `
 export const LowLevel = styled.div`
-    position: relative;
     display: flex;
-    align-items: center;
+    justify-content: center;
     & > div {
         display: flex;
         align-items: center;
@@ -119,13 +101,6 @@ export const LowLevel = styled.div`
         height: ${pixelToRem(24)};
         border-radius: ${pixelToRem(100)};
         color: ${WHITE};
-    }
-    & > svg {
-        position: absolute;
-        right: 0;
-        height: ${pixelToRem(20)};
-        width: ${pixelToRem(20)};
-        color: ${LIGHT_GREY};
     }
 `
 
