@@ -1,27 +1,24 @@
 import { Modal } from 'antd';
-import { useState } from 'react';
 import FormAdd from './formAdd';
 
-const ModalAdd = () => {
-    const [isModalVisible, setIsModalVisible] = useState(false);
-
-    const handleOk = () => {
-        setIsModalVisible(false);
-    };
-
-    const handleCancel = () => {
-        setIsModalVisible(false);
-    };
+const ModalAdd = ( props ) => {
 
     return(
-        <Modal
+    <Modal
         title="Add Tickets"
-        visible={isModalVisible}
-        onOk={handleOk}
-        onCancel={handleCancel}
+        visible={props.isModalVisible}
+        onCancel ={props.handleCloseModal}
         footer={null}
     >
-        <FormAdd />
+        <FormAdd
+            isLoading={props.isLoading}
+            layoutFormAdd={props.layoutFormAdd}
+            tailLayoutFormAdd={props.tailLayoutFormAdd}
+            onResetFormAdd={props.onResetFormAdd}
+            onFinishFormAdd={props.onFinishFormAdd}
+            onFinishFailedFormAdd={props.onFinishFailedFormAdd}
+            form={props.form}
+        />
     </Modal>
     );
 };

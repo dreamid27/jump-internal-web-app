@@ -1,27 +1,9 @@
 import { Input, Form, DatePicker, Select, Button } from 'antd';
 import { useFormik } from 'formik';
-import UsePostTicket from '../../hooks/usePostTickets';
-
-const layout = {
-    labelCol: {
-        span: 6,
-    },
-    wrapperCol: {
-        span: 16,
-    },
-};
-const tailLayout = {
-    wrapperCol: {
-        offset: 8,
-        span: 16,
-    },
-};
 
 const { Option } = Select;
 
-const FormAdd = () => {
-    const [form] = Form.useForm();
-
+const FormAdd = (props) => {
     const formik = useFormik({
         initialValues: {
             avatar: '',
@@ -33,26 +15,13 @@ const FormAdd = () => {
         },
     });
 
-    const onReset = () => {
-        form.resetFields();
-    };
-
-    const onFinish = (values) => {
-        UsePostTicket(values);
-        form.resetFields();
-    };
-
-    const onFinishFailed = (errorInfo) => {
-        console.log('Failed:', errorInfo);
-    };
-
     return (
         <Form
-            {...layout}
+            {...props.layoutFormAdd}
             name="formAdd"
-            form={form}
-            onFinish={onFinish}
-            onFinishFailed={onFinishFailed}
+            form={props.form}
+            onFinish={props.onFinishFormAdd}
+            onFinishFailed={props.onFinishFailedFormAdd}
         >
             <Form.Item
                 label="Username"
@@ -146,14 +115,14 @@ const FormAdd = () => {
             >
                 <Input.TextArea />
             </Form.Item>
-            <Form.Item {...tailLayout}>
-                <Button 
-                    type="primary" 
+            <Form.Item {...props.tailLayoutFormAdd}>
+                <Button
+                    type="primary"
                     htmlType="submit"
                 >
                     Submit
                 </Button>
-                <Button htmlType="button" onClick={onReset}>
+                <Button htmlType="button" onClick={props.onResetFormAdd}>
                     Reset
                 </Button>
             </Form.Item>
