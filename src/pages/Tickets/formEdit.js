@@ -4,6 +4,7 @@ import { useFormik } from 'formik';
 const { Option } = Select;
 
 const FormAdd = (props) => {
+
     const formik = useFormik({
         initialValues: {
             avatar: '',
@@ -20,12 +21,9 @@ const FormAdd = (props) => {
             {...props.layoutFormAdd}
             name="formAdd"
             form={props.form}
-            onFinish={props.onFinishFormAdd}
+            onFinish={() =>props.onFinishFormAdd(props.idData, formik.initialValues)}
             onFinishFailed={props.onFinishFailedFormAdd}
         >
-            {/* {props.isLoading ? 
-            <Spin tip="Loading..." />
-            : null} */}
             <Form.Item
                 label="Username"
                 name="name"

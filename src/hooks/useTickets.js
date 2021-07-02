@@ -57,6 +57,21 @@ const useTickets = () => {
         console.log('Failed:', errorInfo);
     };
 
+    const onFinishFormEdit = (values, idData) => {
+        setIsLoading(true);
+        console.log('OnFinis');
+        editTickets(values, idData);
+        setTimeout(() => {
+            setIsModalVisible(false);
+            setIsLoading(false);
+            form.resetFields();
+        }, 1000);
+    };
+
+    const onFinishFailedFormEdit = (errorInfo) => {
+        console.log('Failed:', errorInfo);
+    };
+
     // Start Delete Function
     const confirmDelete = (props) => {
         deleteTicket(props);
@@ -100,6 +115,21 @@ const useTickets = () => {
         }
     };
 
+    const editTickets = async(props) => {
+        try {
+            setIsLoading(true);
+            const resEdit = await axios.put(urlApi+props.idData, props.values);
+            console.log(resEdit);
+            const resGet = await axios.get(urlApi);
+            const dataSource = normalizerDataSource(resGet.data);
+            setTickets(dataSource);
+        } catch (err) {
+            console.log(err.message);
+        } finally {
+            setIsLoading(false);
+        }
+    }
+
     useEffect(async() => {
         try {
             setIsLoading(true);
@@ -116,7 +146,7 @@ const useTickets = () => {
     }, [])
     return { tickets, 
              isLoading, 
-             isModalVisible, 
+             isModalVisible,
              layoutFormAdd, 
              tailLayoutFormAdd,
              form, 
@@ -124,11 +154,14 @@ const useTickets = () => {
              onFinishFormAdd,
              onFinishFailedFormAdd,
              handleCloseModal, 
-             handleShowModal, 
+             handleShowModal,
              deleteTicket, 
              postTicket,
+             editTickets,
              confirmDelete,
              cancelDelete,
+             onFinishFormEdit,
+             onFinishFailedFormEdit,
             };
 };
 
