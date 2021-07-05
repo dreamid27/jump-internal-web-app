@@ -1,27 +1,25 @@
 import { Input, Form, DatePicker, Select, Button } from 'antd';
-import { useFormik } from 'formik';
+import moment from 'moment';
 
 const { Option } = Select;
 
-const FormAdd = (props) => {
-
-    const formik = useFormik({
-        initialValues: {
-            avatar: '',
-            notes: '',
-            name: '',
-            createdAt: '',
-            date: '',
-            priority: '',
-        },
-    });
+const FormEdit = (props) => {
+    console.log(props);
 
     return (
         <Form
             {...props.layoutFormAdd}
-            name="formAdd"
+            name="formEdit"
+            initialValues={{
+                avatar: props.formData.tiketDetailsImages,
+                notes: props.formData.tiketDetailsStatus,
+                name: props.formData.customerName,
+                createdAt: moment(props.formData.customerNameOn),
+                date: moment(props.formData.date),
+                priority: props.formData.priority,
+            }}
             form={props.form}
-            onFinish={() =>props.onFinishFormAdd(props.idData, formik.initialValues)}
+            onFinish={(values) => props.onFinishFormEdit(props.formData.key, values)}
             onFinishFailed={props.onFinishFailedFormAdd}
         >
             <Form.Item
@@ -33,8 +31,6 @@ const FormAdd = (props) => {
                         message: 'Please input your username!',
                     },
                 ]}
-                onChange={formik.handleChange}
-                value={formik.values.name}
             >
                 <Input />
             </Form.Item>
@@ -47,8 +43,6 @@ const FormAdd = (props) => {
                         message: 'Please input your image!',
                     },
                 ]}
-                onChange={formik.handleChange}
-                value={formik.values.avatar}
             >
                 <Input />
             </Form.Item>
@@ -62,8 +56,6 @@ const FormAdd = (props) => {
                         message: 'Please select time!',
                     },
                 ]}
-                onChange={formik.handleChange}
-                value={formik.values.createdAt}
             >
                 <DatePicker showTime format="YYYY-MM-DD HH:mm:ss" />
             </Form.Item>
@@ -77,8 +69,6 @@ const FormAdd = (props) => {
                         message: 'Please select time!',
                     },
                 ]}
-                onChange={formik.handleChange}
-                value={formik.values.date}
             >
                 <DatePicker showTime format="YYYY-MM-DD HH:mm:ss" />
             </Form.Item>
@@ -90,8 +80,6 @@ const FormAdd = (props) => {
                         required: true,
                     },
                 ]}
-                onChange={formik.handleChange}
-                value={formik.values.priority}
             >
                 <Select
                     placeholder="Select Priority"
@@ -111,8 +99,6 @@ const FormAdd = (props) => {
                         message: 'Please input your ticket notes!',
                     },
                 ]}
-                onChange={formik.handleChange}
-                value={formik.values.notes}
             >
                 <Input.TextArea />
             </Form.Item>
@@ -131,4 +117,4 @@ const FormAdd = (props) => {
     );
 };
 
-export default FormAdd;
+export default FormEdit;

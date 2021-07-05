@@ -14,9 +14,11 @@ const Tickets = () => {
     const { tickets,
         isLoading,
         isModalVisible,
+        isModalEditVisible,
         layoutFormAdd,
         tailLayoutFormAdd,
         form,
+        formData,
         confirmDelete,
         cancelDelete,
         onResetFormAdd,
@@ -26,6 +28,7 @@ const Tickets = () => {
         handleShowModal,
         onFinishFormEdit,
         onFinishFailedFormEdit,
+        handleShowModalEdit,
     } = useTickets();
 
     return (
@@ -39,16 +42,7 @@ const Tickets = () => {
                     columns={columns(
                         confirmDelete,
                         cancelDelete,
-                        handleShowModal,
-                        isLoading,
-                        isModalVisible,
-                        handleCloseModal,
-                        layoutFormAdd,
-                        tailLayoutFormAdd,
-                        onResetFormAdd,
-                        onFinishFormEdit,
-                        onFinishFailedFormEdit,
-                        form,
+                        handleShowModalEdit,
                     )}
                     dataSource={tickets}
                     title={() => 'All Tickets'}
@@ -66,17 +60,18 @@ const Tickets = () => {
                 onFinishFailedFormAdd={onFinishFailedFormAdd}
                 form={form}
             />
-            {/* <ModalEdit
+            <ModalEdit
                 isLoading={isLoading}
-                isModalVisible={isModalVisible}
+                isModalEditVisible={isModalEditVisible}
                 handleCloseModal={handleCloseModal}
                 layoutFormAdd={layoutFormAdd}
                 tailLayoutFormAdd={tailLayoutFormAdd}
                 onResetFormAdd={onResetFormAdd}
-                onFinishFormAdd={onFinishFormEdit}
+                onFinishFormEdit={onFinishFormEdit}
                 onFinishFailedFormAdd={onFinishFailedFormEdit}
                 form={form}
-            /> */}
+                formData={formData}
+            />
         </Container>
     );
 };

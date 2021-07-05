@@ -5,7 +5,7 @@ const ModalEdit = ( props ) => {
     return(
     <Modal
         title="Edit Tickets"
-        visible={props.isModalVisible}
+        visible={props.isModalEditVisible}
         onCancel ={props.handleCloseModal}
         footer={null}
     >
@@ -13,15 +13,15 @@ const ModalEdit = ( props ) => {
             <Spin tip="Loading..."/> :
             <FormEdit
             isLoading={props.isLoading}
-            isModalVisible={props.isModalVisible}
+            isModalEditVisible={props.isModalEditVisible}
             handleCloseModal={props.handleCloseModal}
             layoutFormAdd={props.layoutFormAdd}
             tailLayoutFormAdd={props.tailLayoutFormAdd}
             onResetFormAdd={props.onResetFormAdd}
-            onFinishFormAdd={props.onFinishFormEdit}
+            onFinishFormEdit={props.onFinishFormEdit}
             onFinishFailedFormAdd={props.onFinishFailedFormEdit}
-            idData={props.idData}
             form={props.form}
+            formData={props.formData}
             />
         }
     </Modal>

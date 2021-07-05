@@ -2,20 +2,11 @@
 import { CustomerNameView, DateView, HighLevel, NormalLevel, LowLevel, TiketDetailsView } from "./styles";
 import ModalDelete from "./modalDelete";
 import { Button } from 'antd';
-import ModalEdit from "./modalEdit";
 
 const columns = (confirmDelete,
     cancelDelete,
-    handleShowModal,
-    isLoading,
-    isModalVisible,
-    handleCloseModal,
-    layoutFormAdd,
-    tailLayoutFormAdd,
-    onResetFormAdd,
-    onFinishFormEdit,
-    onFinishFailedFormEdit,
-    form,) => [
+    handleShowModalEdit,
+) => [
         {
             title: 'Tiket Details',
             dataIndex: 'tiketDetails',
@@ -97,21 +88,9 @@ const columns = (confirmDelete,
                         confirmDelete={() => confirmDelete(record.key)} //() => aktif saat ada action
                         cancelDelete={cancelDelete}
                     />
-                    <Button type="primary" onClick={handleShowModal}>
+                    <Button type="primary" onClick={() => handleShowModalEdit(record)}>
                         Edit
                     </Button>
-                    <ModalEdit
-                        isLoading={isLoading}
-                        isModalVisible={isModalVisible}
-                        handleCloseModal={handleCloseModal}
-                        layoutFormAdd={layoutFormAdd}
-                        tailLayoutFormAdd={tailLayoutFormAdd}
-                        onResetFormAdd={onResetFormAdd}
-                        onFinishFormAdd={onFinishFormEdit}
-                        onFinishFailedFormAdd={onFinishFailedFormEdit}
-                        idData={record.key}
-                        form={form}
-                    />
                 </div>
             ),
         },

@@ -10,16 +10,23 @@ const useTickets = () => {
     const [tickets, setTickets] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [isModalVisible, setIsModalVisible] = useState(false);
+    const [isModalEditVisible, setIsModalEditVisible] = useState(false);
+    const [formData, setFromData] = useState({});
     const [form] = Form.useForm();
 
     const handleCloseModal = () => {
         setIsModalVisible(false);
-        console.log('Close Modal');
+        setIsModalEditVisible(false);
     };
 
     const handleShowModal = () => {
         setIsModalVisible(true);
-        console.log('Show Modal');
+        form.resetFields();
+    };
+
+    const handleShowModalEdit = (rec) => {
+        setFromData(rec);
+        setIsModalEditVisible(true);
     };
 
     const layoutFormAdd = {
@@ -39,30 +46,27 @@ const useTickets = () => {
 
     const onResetFormAdd = () => {
         form.resetFields();
-        console.log('OnReset');
     };
 
     const onFinishFormAdd = (values) => {
-            setIsLoading(true);
-            console.log('OnFinis');
-            postTicket(values);
-            setTimeout(() => {
-                setIsModalVisible(false);
-                setIsLoading(false);
-                form.resetFields();
-            }, 1000);
+        setIsLoading(true);
+        postTicket(values);
+        setTimeout(() => {
+            setIsModalVisible(false);
+            setIsLoading(false);
+            form.resetFields();
+        }, 1000);
     };
 
     const onFinishFailedFormAdd = (errorInfo) => {
         console.log('Failed:', errorInfo);
     };
 
-    const onFinishFormEdit = (values, idData) => {
+    const onFinishFormEdit = (idData, values) => {
         setIsLoading(true);
-        console.log('OnFinis');
-        editTickets(values, idData);
+        editTickets(idData, values);
         setTimeout(() => {
-            setIsModalVisible(false);
+            setIsModalEditVisible(false);
             setIsLoading(false);
             form.resetFields();
         }, 1000);
@@ -84,10 +88,10 @@ const useTickets = () => {
     }
     // End Delete Funtion
 
-    const deleteTicket = async(idData) => {
+    const deleteTicket = async (idData) => {
         try {
             setIsLoading(true);
-            const resDel = await axios.delete(urlApi+idData);
+            const resDel = await axios.delete(urlApi + idData);
             console.log(resDel);
             const resGet = await axios.get(urlApi);
             const dataSource = normalizerDataSource(resGet.data);
@@ -100,7 +104,7 @@ const useTickets = () => {
         }
     };
 
-    const postTicket = async(data) => {
+    const postTicket = async (data) => {
         try {
             setIsLoading(true);
             const resPost = await axios.post(urlApi, data);
@@ -115,10 +119,10 @@ const useTickets = () => {
         }
     };
 
-    const editTickets = async(props) => {
+    const editTickets = async (idData, data) => {
         try {
             setIsLoading(true);
-            const resEdit = await axios.put(urlApi+props.idData, props.values);
+            const resEdit = await axios.put(urlApi + idData, data);
             console.log(resEdit);
             const resGet = await axios.get(urlApi);
             const dataSource = normalizerDataSource(resGet.data);
@@ -130,13 +134,12 @@ const useTickets = () => {
         }
     }
 
-    useEffect(async() => {
+    useEffect(async () => {
         try {
             setIsLoading(true);
             const resGet = await axios.get(urlApi);
             const dataSource = normalizerDataSource(resGet.data);
             setTickets(dataSource);
-            console.log('Print useTickets',dataSource);
         } catch (err) {
             console.log(err.message);
             console.log(err.status);
@@ -144,25 +147,30 @@ const useTickets = () => {
             setIsLoading(false);
         }
     }, [])
-    return { tickets, 
-             isLoading, 
-             isModalVisible,
-             layoutFormAdd, 
-             tailLayoutFormAdd,
-             form, 
-             onResetFormAdd,
-             onFinishFormAdd,
-             onFinishFailedFormAdd,
-             handleCloseModal, 
-             handleShowModal,
-             deleteTicket, 
-             postTicket,
-             editTickets,
-             confirmDelete,
-             cancelDelete,
-             onFinishFormEdit,
-             onFinishFailedFormEdit,
-            };
+
+    return {
+        tickets,
+        isLoading,
+        isModalVisible,
+        isModalEditVisible,
+        layoutFormAdd,
+        tailLayoutFormAdd,
+        form,
+        formData,
+        onResetFormAdd,
+        onFinishFormAdd,
+        onFinishFailedFormAdd,
+        handleCloseModal,
+        handleShowModal,
+        deleteTicket,
+        postTicket,
+        editTickets,
+        confirmDelete,
+        cancelDelete,
+        onFinishFormEdit,
+        onFinishFailedFormEdit,
+        handleShowModalEdit,
+    };
 };
 
 export default useTickets;
