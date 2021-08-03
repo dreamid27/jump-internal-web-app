@@ -16,12 +16,17 @@ const useTickets = () => {
 
     const handleCloseModal = () => {
         setIsModalVisible(false);
+        console.log('Hide Modal Add');
+        form.resetFields();
+        console.log('Clear Form');
         setIsModalEditVisible(false);
+        console.log('Hide Modal Edit');
+        form.resetFields();
+        console.log('Clear Form');
     };
 
     const handleShowModal = () => {
         setIsModalVisible(true);
-        form.resetFields();
     };
 
     const handleShowModalEdit = (rec) => {

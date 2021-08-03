@@ -12,6 +12,8 @@ const normalizerDataSource = (dataSource) => {
             date: format(new Date(row.date), 'MMM dd, yyyy'),
             dateTime: format(new Date(row.date), 'h.mm a'),
             priority: row.priority,
+            originalCreatedAt: row.createdAt,
+            originalDate: row.date,
         }
     ));
 };

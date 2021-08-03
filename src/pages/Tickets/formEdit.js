@@ -4,7 +4,7 @@ import moment from 'moment';
 const { Option } = Select;
 
 const FormEdit = (props) => {
-    console.log(props);
+    console.log(props.formData);
 
     return (
         <Form
@@ -14,8 +14,8 @@ const FormEdit = (props) => {
                 avatar: props.formData.tiketDetailsImages,
                 notes: props.formData.tiketDetailsStatus,
                 name: props.formData.customerName,
-                createdAt: moment(props.formData.customerNameOn),
-                date: moment(props.formData.date),
+                createdAt: moment(props.formData.originalCreatedAt),
+                date: moment(props.formData.originalDate),
                 priority: props.formData.priority,
             }}
             form={props.form}
