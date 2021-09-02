@@ -31,6 +31,10 @@ const Tickets = () => {
         handleShowModalEdit,
     } = useTickets();
 
+    console.log('isModalVisible', isModalVisible);
+    console.log('isModalEditVisible', isModalEditVisible);
+    
+
     return (
         <Container>
             <HeadContents />

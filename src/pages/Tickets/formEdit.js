@@ -10,14 +10,14 @@ const FormEdit = (props) => {
         <Form
             {...props.layoutFormAdd}
             name="formEdit"
-            initialValues={{
-                avatar: props.formData.tiketDetailsImages,
-                notes: props.formData.tiketDetailsStatus,
-                name: props.formData.customerName,
-                createdAt: moment(props.formData.originalCreatedAt),
-                date: moment(props.formData.originalDate),
-                priority: props.formData.priority,
-            }}
+            // initialValues={{
+            //     avatar: props.formData.tiketDetailsImages,
+            //     notes: props.formData.tiketDetailsStatus,
+            //     name: props.formData.customerName,
+            //     createdAt: moment(props.formData.originalCreatedAt),
+            //     date: moment(props.formData.originalDate),
+            //     priority: props.formData.priority,
+            // }}
             form={props.form}
             onFinish={(values) => props.onFinishFormEdit(props.formData.key, values)}
             onFinishFailed={props.onFinishFailedFormAdd}

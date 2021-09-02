@@ -1,7 +1,10 @@
 import { Modal, Spin } from 'antd';
 import FormAdd from './formAdd';
+// import { Form} from 'antd';
 
 const ModalAdd = ( props ) => {
+    // const [form] = Form.useForm();
+    console.log('form', props.form);
     return(
     <Modal
         title="Add Tickets"
@@ -9,6 +12,7 @@ const ModalAdd = ( props ) => {
         onCancel ={props.handleCloseModal}
         footer={null}
     >
+
         {props.isLoading ? 
             <Spin tip="Loading..."/> :
             <FormAdd

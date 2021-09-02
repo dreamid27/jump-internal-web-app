@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Form, message } from 'antd';
 import normalizerDataSource from '../normalizer/normalizerDataSource';
+import moment from 'moment';
 
 const urlApi = 'https://6056df7a055dbd0017e84408.mockapi.io/tickets/';
 
@@ -26,11 +27,22 @@ const useTickets = () => {
     };
 
     const handleShowModal = () => {
+        form.setFieldsValue({});
         setIsModalVisible(true);
     };
 
     const handleShowModalEdit = (rec) => {
-        setFromData(rec);
+        /// rec digunakan mendapatkan data sesuai id yang akan diedit
+        ///Normalozer untuk form edit, untuk menghindari value nyangkut
+        const dataEdit = {
+            avatar: rec.tiketDetailsImages,
+            notes: rec.tiketDetailsStatus,
+            name: rec.customerName,
+            createdAt: moment(rec.originalCreatedAt),
+            date: moment(rec.originalDate),
+            priority: rec.priority,
+        }
+        form.setFieldsValue(dataEdit);
         setIsModalEditVisible(true);
     };
 

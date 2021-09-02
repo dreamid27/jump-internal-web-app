@@ -21,9 +21,10 @@ const ModalEdit = ( props ) => {
             onFinishFormEdit={props.onFinishFormEdit}
             onFinishFailedFormAdd={props.onFinishFailedFormEdit}
             form={props.form}
-            formData={props.formData}
+            // formData={props.formData}
             />
         }
+
     </Modal>
     );
 };

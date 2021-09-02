@@ -3,7 +3,6 @@ import { Input, Form, DatePicker, Select, Button } from 'antd';
 const { Option } = Select;
 
 const FormAdd = (props) => {
-
     return (
         <Form
             {...props.layoutFormAdd}
